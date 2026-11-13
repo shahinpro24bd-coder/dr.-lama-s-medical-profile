@@ -1,19 +1,22 @@
 import { describe, expect, it } from "vitest";
+import { existsSync, readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import indexHtml from "../../site/index.html?raw";
 import fallback from "./fallback.generated.json?raw";
 
-const PUBLIC_ASSET_HOST = "https://id-preview--800b11c5-de62-438c-bba4-c2b14c3abaa7.lovable.app";
+const PAGES = ["index", "about", "service", "appoinment", "contact"];
 
-function expectPublicAssetUrls(source: string, expectedCount: number) {
-  const urls = source.match(/https:\/\/id-preview--800b11c5-de62-438c-bba4-c2b14c3abaa7\.lovable\.app\/__l5e\/assets-v1\/[a-f0-9-]+\/[A-Za-z0-9._-]+/g) || [];
-  expect(urls).toHaveLength(expectedCount);
-  expect(urls.every((url) => url.startsWith(`${PUBLIC_ASSET_HOST}/__l5e/assets-v1/`))).toBe(true);
-  expect(source).not.toContain('"/__l5e/assets-v1/');
-}
+describe("self-hosted media", () => {
+  it("serves every image and video from the site itself so it works on any host", () => {
+    expect(indexHtml).not.toMatch(/https:\/\/[^"']*__l5e\/assets-v1/);
+    expect(fallback).not.toMatch(/__l5e\/assets-v1/);
+  });
 
-describe("externally deployed media", () => {
-  it("uses public absolute URLs for every image, thumbnail and video", () => {
-    expectPublicAssetUrls(indexHtml, 10);
-    expectPublicAssetUrls(fallback, 9);
+  it("ships every picture and video the pages reference", () => {
+    for (const page of PAGES) {
+      const html = readFileSync(resolve("src/site", `${page}.html`), "utf8");
+      const files = html.match(/\/(?:img|reels)\/[A-Za-z0-9_./-]+\.(?:webp|png|jpe?g|mp4)/g) || [];
+      for (const file of files) expect(existsSync(resolve("public", file.slice(1))), file).toBe(true);
+    }
   });
 });
