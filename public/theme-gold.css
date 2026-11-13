@@ -387,3 +387,8 @@ html[lang="ar"] .hero-reference-word {
 
 /* Keep the page still while sections animate in after a page/language switch. */
 html, body { overflow-anchor: none; }
+
+/* Right-to-left (Arabic): breadcrumb separators and list arrows point the reading way. */
+html[dir="rtl"] .breadcrumb-item + .breadcrumb-item { padding-left: 0; padding-right: .5rem; }
+html[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before { float: right; padding-left: .5rem; padding-right: 0; }
+html[dir="rtl"] .footer .btn.btn-link::before { content: "\f104"; margin-right: 0; margin-left: 10px; }
