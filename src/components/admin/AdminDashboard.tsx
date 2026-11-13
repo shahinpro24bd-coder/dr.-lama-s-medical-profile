@@ -45,7 +45,7 @@ const TABS: { id: Tab; label: string; icon: typeof Home }[] = [
 
 export const EDITABLE_PAGES = [
   { slug: "index", label: "Home", desc: "Hero, about the doctor, treatments, before & after, FAQ", icon: Home },
-  { slug: "about", label: "About", desc: "Dr. Dina Svinareva's story, training and values", icon: Info },
+  { slug: "about", label: "About", desc: "Dr. Lama Ghassan's story, training and values", icon: Info },
   { slug: "service", label: "Treatments", desc: "All plastic and aesthetic treatments", icon: Stethoscope },
   { slug: "appoinment", label: "Appointment", desc: "Booking page and form texts", icon: CalendarCheck },
   { slug: "contact", label: "Contact", desc: "Contact details and form", icon: Mail },
@@ -101,7 +101,7 @@ export function AdminDashboard({
       <header className="sticky top-0 z-10 bg-admin-bar text-admin-bar-foreground">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <span className={`${heading} text-2xl`}>
-            Dr. Dina Svinareva <span className="text-admin-accent">Admin</span>
+            Dr. Lama Ghassan <span className="text-admin-accent">Admin</span>
           </span>
           <div className="flex items-center gap-3">
             <a href="/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 border border-admin-bar-foreground px-2 py-1 text-sm">

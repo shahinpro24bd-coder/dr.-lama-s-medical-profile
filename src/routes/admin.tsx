@@ -13,8 +13,8 @@ const PAGES = [
   { slug: "contact", label: "Contact" },
 ] as const;
 
-const SESSION_KEY = "site_admin_session_v1";
-const CONTENT_KEY = "site_local_content_v1";
+const SESSION_KEY = "site_admin_session_v2";
+const CONTENT_KEY = "site_local_content_v2";
 
 type LocalContent = {
   langs: Record<string, Record<string, string>>;
@@ -41,11 +41,11 @@ export const Route = createFileRoute("/admin")({
   head: () => ({
     links: [{ rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Teko:wght@500;600&display=swap" }],
     meta: [
-      { title: "Admin Panel | Dr. Dina Svinareva" },
-      { name: "description", content: "Manage Dr. Dina Svinareva website content, treatments and appointment requests." },
+      { title: "Admin Panel | Dr. Lama Ghassan" },
+      { name: "description", content: "Manage Dr. Lama Ghassan website content, treatments and appointment requests." },
       { name: "robots", content: "noindex, nofollow" },
-      { property: "og:title", content: "Admin Panel | Dr. Dina Svinareva" },
-      { property: "og:description", content: "Manage Dr. Dina Svinareva website content, treatments and appointment requests." },
+      { property: "og:title", content: "Admin Panel | Dr. Lama Ghassan" },
+      { property: "og:description", content: "Manage Dr. Lama Ghassan website content, treatments and appointment requests." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -101,7 +101,7 @@ function LoginScreen({ onSuccess }: { onSuccess: () => void }) {
         }}
         className="w-full max-w-sm rounded-xl border border-border bg-card p-6 shadow-sm"
       >
-        <h1 className="text-lg font-semibold text-card-foreground">Dr. Dina Svinareva Admin</h1>
+        <h1 className="text-lg font-semibold text-card-foreground">Dr. Lama Ghassan Admin</h1>
         <p className="mt-1 text-sm text-muted-foreground">Sign in to manage the website.</p>
 
         <label className="mt-5 block text-xs font-medium text-muted-foreground">
@@ -271,7 +271,7 @@ function Editor({ onSignOut, onBack, initialPage }: { onSignOut: () => void; onB
         </div>
 
         <span className="col-span-2 min-w-0 text-xs text-muted-foreground lg:col-auto">
-          Dr. Dina Svinareva · {dirtyCount ? "Unsaved changes" : "Website editor"}
+          Dr. Lama Ghassan · {dirtyCount ? "Unsaved changes" : "Website editor"}
         </span>
 
         <div className="col-span-2 flex min-w-0 flex-wrap items-center justify-end gap-2 lg:col-auto lg:ml-auto">
@@ -325,7 +325,7 @@ function Editor({ onSignOut, onBack, initialPage }: { onSignOut: () => void; onB
           ref={frameRef}
           key={frameSrc}
           src={frameSrc}
-          title="Dr. Dina Svinareva website preview"
+          title="Dr. Lama Ghassan website preview"
           className="min-h-0 min-w-0 flex-1 border-0 bg-background"
         />
         <aside className="hidden w-64 shrink-0 overflow-y-auto border-l border-border bg-card p-3 md:block">

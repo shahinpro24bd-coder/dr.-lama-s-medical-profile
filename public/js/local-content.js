@@ -3,7 +3,7 @@
    here on every page load, so no server, database or API key is needed. */
 (function () {
   "use strict";
-  var KEY = "site_local_content_v1";
+  var KEY = "site_local_content_v2";
 
   function read() {
     try {
@@ -98,7 +98,7 @@
 
   /* Contact details saved from the admin "Contact Info" tab. */
   function applyContact() {
-    var c = readJson("site_admin_contact_v1");
+    var c = readJson("site_admin_contact_v2");
     if (!c) return;
     var digits = function (v) { return String(v || "").replace(/[^0-9]/g, ""); };
     if (c.phone) {
@@ -133,7 +133,7 @@
     var name = val("appo14");
     var phone = val("appo15");
     if (!name || !phone) return;
-    var list = readJson("site_admin_requests_v1") || [];
+    var list = readJson("site_admin_requests_v2") || [];
     var now = Date.now();
     if (list[0] && list[0].phone === phone && now - list[0].createdAt < 5000) return;
     list.unshift({
@@ -146,7 +146,7 @@
       createdAt: now,
       read: false,
     });
-    try { localStorage.setItem("site_admin_requests_v1", JSON.stringify(list.slice(0, 500))); } catch (err) {}
+    try { localStorage.setItem("site_admin_requests_v2", JSON.stringify(list.slice(0, 500))); } catch (err) {}
   }
   document.addEventListener("click", onRequestClick, true);
 
