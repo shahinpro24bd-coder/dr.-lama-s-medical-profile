@@ -912,7 +912,7 @@
 
 <body>
 
- <!-- nav -->
+ 
     <div class="container-fluid bg-light sticky-top p-0">
         <nav class="navbar navbar-expand-lg navbar-light p-0">
             <a href="index.html" class="navbar-brand py-2 px-3 me-0">
@@ -942,7 +942,7 @@
             </div>
         </nav>
     </div>
-    <!-- nav -->
+    
 
 
     <div class="container-fluid page-header py-5 mb-5">
@@ -1122,8 +1122,8 @@
 
 
 
-    <!-- footer -->
-      <!-- Footer -->
+    
+      
     <div class="container-fluid footer position-relative bg-dark text-white-50 py-5 mt-5 wow fadeIn" data-wow-delay="0.2s">
         <div class="container py-5">
             <div class="row g-5">
@@ -1183,7 +1183,7 @@
             </div>
         </div>
     </div>
-        <!-- footer -->
+        
 
 
 
@@ -1237,13 +1237,13 @@
                 var mailTo = '96897745838@sms.invalid';
                 var mailSubject = encodeURIComponent(subject);
                 var mailBody = encodeURIComponent(
-                    'Dear Dr. Nihaia,\n\n' +
+                    'Dear Dr. Lama,\n\n' +
                     message + '\n\n' +
                     '---\n' +
                     'Patient Name: ' + name + '\n' +
                     'Email: ' + email + '\n' +
                     'Phone: ' + (phone || 'N/A') + '\n\n' +
-                    'Sent from Biadse Dental Clinic Website Contact Form'
+                    'Sent from the Dr. Lama Ghassan website contact form'
                 );
 
                 window.location.href = 'https://api.whatsapp.com/send?phone=96897745838&text=' + encodeURIComponent(mailSubject + '\n' + mailBody);
@@ -1332,29 +1332,29 @@
             
             // Validate required fields
             if (!name) {
-                showNotification(window.__SITE_LANG__ === 'ru' ? 'Пожалуйста, укажите ваше ФИО' : 'Please enter your full name', 'error');
+                showNotification(window.__SITE_LANG__ === 'ar' ? 'يرجى إدخال اسمك الكامل' : 'Please enter your full name', 'error');
                 document.getElementById('appo14').focus();
                 return;
             }
             
             if (!phone) {
-                showNotification(window.__SITE_LANG__ === 'ru' ? 'Пожалуйста, укажите ваш номер телефона' : 'Please enter your phone number', 'error');
+                showNotification(window.__SITE_LANG__ === 'ar' ? 'يرجى إدخال رقم هاتفك' : 'Please enter your phone number', 'error');
                 document.getElementById('appo15').focus();
                 return;
             }
             
             // Format the message
-            const russian = window.__SITE_LANG__ === 'ru';
-            let formattedMessage = russian ? "Заявка на приём:\n" : "Appointment Request:\n";
-            formattedMessage += `${russian ? 'ФИО' : 'Full Name'}: ${name}\n`;
-            formattedMessage += `${russian ? 'Телефон' : 'Phone'}: ${phone}\n`;
+            const arabic = window.__SITE_LANG__ === 'ar';
+            let formattedMessage = arabic ? "طلب موعد:\n" : "Appointment Request:\n";
+            formattedMessage += `${arabic ? 'الاسم الكامل' : 'Full Name'}: ${name}\n`;
+            formattedMessage += `${arabic ? 'الهاتف' : 'Phone'}: ${phone}\n`;
             
             if (date) {
-                formattedMessage += `${russian ? 'Дата' : 'Date'}: ${formatDate(date)}\n`;
+                formattedMessage += `${arabic ? 'التاريخ' : 'Date'}: ${formatDate(date)}\n`;
             }
             
             if (message) {
-                formattedMessage += `${russian ? 'Сообщение' : 'Message'}: ${message}`;
+                formattedMessage += `${arabic ? 'الرسالة' : 'Message'}: ${message}`;
             }
             
             // Encode the message
@@ -1367,7 +1367,7 @@
             const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
             
             // Show success notification
-            showNotification(russian ? 'Перенаправляем вас в WhatsApp...' : 'Redirecting you to WhatsApp...', 'success');
+            showNotification(arabic ? 'جارٍ تحويلك إلى واتساب...' : 'Redirecting you to WhatsApp...', 'success');
             
             // Open WhatsApp in a new tab after a short delay
             setTimeout(() => {
@@ -1378,7 +1378,7 @@
         function formatDate(dateString) {
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
             const date = new Date(dateString);
-            return date.toLocaleDateString(window.__SITE_LANG__ === 'ru' ? 'ru-RU' : 'en-GB', options);
+            return date.toLocaleDateString(window.__SITE_LANG__ === 'ar' ? 'ar-OM' : 'en-GB', options);
         }
 
         // Add enter key support for form submission
