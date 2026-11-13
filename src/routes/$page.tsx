@@ -10,8 +10,8 @@ export const Route = createFileRoute("/$page")({
       "contact.html": "Contact",
     };
     const label = labels[params.page] ?? "Page";
-    const title = `${label} | Dr. Dina Svinareva`;
-    const description = `Dr. Dina Svinareva — ${label.toLowerCase()}: ophthalmic and oculoplastic surgery in Voronezh & Belgorod.`;
+    const title = `${label} | Dr. Lama Ghassan, Cosmetic Dentist`;
+    const description = `Dr. Lama Ghassan — ${label.toLowerCase()}: porcelain veneers, Hollywood smiles and aesthetic dentistry at NHC Medical Center, Muscat, Oman.`;
     return {
       meta: [
         { title },

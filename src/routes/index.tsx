@@ -5,10 +5,10 @@ import { SITE_LOGO_URL } from "@/lib/site-content/branding";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dr. Dina Svinareva, MD, Ph.D. | Ophthalmic & Oculoplastic Surgeon" },
-      { name: "description", content: "Consultant ophthalmic surgeon in Voronezh & Belgorod: blepharoplasty, oculoplastic surgery, cataract, glaucoma and strabismus care." },
-      { property: "og:title", content: "Dr. Dina Svinareva, MD, Ph.D. | Ophthalmic & Oculoplastic Surgeon" },
-      { property: "og:description", content: "Consultant ophthalmic surgeon in Voronezh & Belgorod: blepharoplasty, oculoplastic surgery, cataract, glaucoma and strabismus care." },
+      { title: "Dr. Lama Ghassan | Cosmetic Dentist in Muscat, Oman" },
+      { name: "description", content: "Cosmetic and restorative dentist in Muscat: porcelain veneers, Hollywood smile, Lumineers, bonding and whitening at NHC — Dr. Nael Al Hazeem Medical Center." },
+      { property: "og:title", content: "Dr. Lama Ghassan | Cosmetic Dentist in Muscat, Oman" },
+      { property: "og:description", content: "Cosmetic and restorative dentist in Muscat: porcelain veneers, Hollywood smile, Lumineers, bonding and whitening at NHC — Dr. Nael Al Hazeem Medical Center." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
